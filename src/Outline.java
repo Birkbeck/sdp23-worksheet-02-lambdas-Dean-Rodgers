@@ -61,6 +61,21 @@ public class Outline  {
 
   }
 
+  public static void question3() {
+    boolean betterWord;
+    betterWord = StringUtils.betterString("cool", "world", (s1, s2) -> s1.length() > s2.length());
+    System.out.println("3: " + betterWord);
+    betterWord = StringUtils.betterString("test1", "test2", (s1, s2) -> true);
+    System.out.println("3: " + betterWord);
+  }
+
+  public static void question4() {
+    boolean betterElement;
+    betterElement = StringUtils.betterEntry("cool", "world", (s1, s2) -> s1.length() > s2.length());
+    System.out.println("4: " + betterElement);
+    betterElement = StringUtils.betterEntry("test1", "test2", (s1, s2) -> true);
+    System.out.println("4: " + betterElement);
+  }
 
 
   public static void main(String... args) { // varargs alternative to String[]
@@ -71,6 +86,8 @@ public class Outline  {
     question1_3();
     question1_4();
     question2();
+    question3();
+    question4();
 
 
 
