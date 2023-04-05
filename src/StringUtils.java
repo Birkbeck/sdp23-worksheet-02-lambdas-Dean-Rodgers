@@ -34,11 +34,11 @@ public class StringUtils {
         return result;
     }
 
-    public static <E> List<E> allMatchesGeneric(List<E> lst, Predicate<E> func) {
-        List<E> result = new ArrayList<>();
-        for(E e: lst) {
-            if (func.test(e)) {
-                result.add(e);
+    public static <T> List<T> allMatchesGeneric(List<T> lst, Predicate<T> func) {
+        List<T> result = new ArrayList<>();
+        for(T t: lst) {
+            if (func.test(t)) {
+                result.add(t);
             }
         }
         return result;
@@ -52,10 +52,10 @@ public class StringUtils {
         return result;
     }
 
-    public static <E> List transformedListGenerics(List<E> lst, Function<E, E> func) {
-        List<E> result = new ArrayList<>();
-        for(E e: lst){
-            result.add(func.apply(e));
+    public static <T> List transformedListGenerics(List<T> lst, Function<T, T> func) {
+        List<T> result = new ArrayList<>();
+        for(T t: lst){
+            result.add(func.apply(t));
         }
         return result;
     }
