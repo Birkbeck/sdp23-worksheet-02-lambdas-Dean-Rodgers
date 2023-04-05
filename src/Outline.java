@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 
 public class Outline  {
 
@@ -58,7 +59,6 @@ public class Outline  {
     String[] strArray = getWords();
     Arrays.sort(strArray, StringUtils::eChecker);
     System.out.println("2: " + Arrays.asList(strArray));
-
   }
 
   public static void question3() {
@@ -77,6 +77,44 @@ public class Outline  {
     System.out.println("4: " + betterElement);
   }
 
+  public static void question5() {
+    List<String> words = List.of(getWords());
+    List<String> shortWords = StringUtils.allMatches(words, s -> s.length() < 4);
+    System.out.println("5: " + shortWords);
+    List<String> wordsWithH = StringUtils.allMatches(words, s -> s.contains("h"));
+    System.out.println("5: " + wordsWithH);
+  }
+
+  public static void question6() {
+    List<String> words = List.of(getWords());
+    List<String> shortWords = StringUtils.allMatchesGeneric(words, s -> s.length() < 4);
+    System.out.println("6: " + shortWords);
+    List<String> wordsWithH = StringUtils.allMatchesGeneric(words, s -> s.contains("h"));
+    System.out.println("6: " + wordsWithH);
+    List<Integer> numbers = Arrays.asList(1,4,10,5,23,42,90,3);
+    List<Integer> numbersLess5 = StringUtils.allMatchesGeneric(numbers, n -> n < 5);
+    System.out.println("6: " + numbersLess5);
+  }
+
+  public static void question7() {
+    List<String> words = List.of(getWords());
+    List<String> upperCaseWords = StringUtils.transformedList(words, s -> s.toUpperCase());
+    System.out.println("7: " + upperCaseWords);
+    List<String> excitingWords = StringUtils.transformedList(words, s -> s + "!");
+    System.out.println("7: " + excitingWords);
+  }
+
+  public static void question8() {
+    List<String> words = List.of(getWords());
+    List<String> upperCaseWords = StringUtils.transformedListGenerics(words, s -> s.toUpperCase());
+    System.out.println("8: " + upperCaseWords);
+    List<String> excitingWords = StringUtils.transformedListGenerics(words, s -> s + "!");
+    System.out.println("8: " + excitingWords);
+    List<Integer> numbers = Arrays.asList(1,4,10,5,23,42,90,3);
+    List<Integer> addOne = StringUtils.transformedListGenerics(numbers, n -> n + 1);
+    System.out.println("8: " + addOne);
+  }
+
 
   public static void main(String... args) { // varargs alternative to String[]
 
@@ -88,9 +126,10 @@ public class Outline  {
     question2();
     question3();
     question4();
-
-
-
+    question5();
+    question6();
+    question7();
+    question8();
 
   }
 
